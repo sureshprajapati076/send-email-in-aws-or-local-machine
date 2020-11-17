@@ -1,8 +1,16 @@
+server:
+  port: 2020
 spring:
+  application:
+    name: apigateway
+  data:
+    mongodb:
+      uri: mongodb://mongodbuser:8RXzbLKbAjmyvdRC@mongo-cluster-shard-00-00.nd02l.mongodb.net:27017,mongo-cluster-shard-00-01.nd02l.mongodb.net:27017,mongo-cluster-shard-00-02.nd02l.mongodb.net:27017/testdb?ssl=true&replicaSet=atlas-hxkec4-shard-0&authSource=admin&retryWrites=true&w=majority
+      database: testdb
   mail:
     host: smtp.gmail.com
     username: educationalpurpose076@gmail.com
-    password: qwertyuiop1234567890!@#$%^&*()
+    password: password
     port: 587
     properties:
       mail:
@@ -12,6 +20,8 @@ spring:
             enable: true
     protocol: smtp
     test-connection: false
+jwt:
+  secret: MY-Secret-Key
 
 #1. turn on Allow less secure apps in settings
 # 2. go to https://accounts.google.com/DisplayUnlockCaptcha and click continue
